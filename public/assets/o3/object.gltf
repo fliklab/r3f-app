@@ -1,0 +1,542 @@
+{
+  "extensionsUsed": [
+    "KHR_texture_transform"
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 550,
+      "type": "VEC3",
+      "max": [
+        0.5,
+        1.0,
+        0.5
+      ],
+      "min": [
+        -0.5,
+        -1.0,
+        -0.5
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 550,
+      "type": "VEC3",
+      "max": [
+        0.99871253967285156,
+        1.0,
+        0.99871253967285156
+      ],
+      "min": [
+        -0.99871253967285156,
+        -0.99999916553497314,
+        -0.99871253967285156
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 550,
+      "type": "VEC4",
+      "max": [
+        1.0,
+        0.0303095281124115,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -0.031331468373537064,
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 550,
+      "type": "VEC2",
+      "max": [
+        0.99892324209213257,
+        1.0000053644180298
+      ],
+      "min": [
+        -0.0010808706283569336,
+        0.00115928053855896
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 550,
+      "type": "VEC2",
+      "max": [
+        0.99924451112747192,
+        0.79135102033615112
+      ],
+      "min": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5125,
+      "count": 2496,
+      "type": "SCALAR",
+      "max": [
+        549.0
+      ],
+      "min": [
+        0.0
+      ]
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 550,
+      "type": "VEC3",
+      "max": [
+        0.5,
+        1.0,
+        0.5
+      ],
+      "min": [
+        -0.5,
+        -1.0,
+        -0.5
+      ]
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 550,
+      "type": "VEC3",
+      "max": [
+        0.99871253967285156,
+        1.0,
+        0.99871253967285156
+      ],
+      "min": [
+        -0.99871253967285156,
+        -0.99999916553497314,
+        -0.99871253967285156
+      ]
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5126,
+      "count": 550,
+      "type": "VEC4",
+      "max": [
+        1.0,
+        0.0303095281124115,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -0.031331468373537064,
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5126,
+      "count": 550,
+      "type": "VEC2",
+      "max": [
+        0.99892324209213257,
+        1.0000053644180298
+      ],
+      "min": [
+        -0.0010808706283569336,
+        0.00115928053855896
+      ]
+    },
+    {
+      "bufferView": 10,
+      "componentType": 5126,
+      "count": 550,
+      "type": "VEC2",
+      "max": [
+        0.99924451112747192,
+        0.79135102033615112
+      ],
+      "min": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5125,
+      "count": 2496,
+      "type": "SCALAR",
+      "max": [
+        549.0
+      ],
+      "min": [
+        0.0
+      ]
+    },
+    {
+      "bufferView": 12,
+      "componentType": 5126,
+      "count": 550,
+      "type": "VEC3",
+      "max": [
+        0.5,
+        1.0,
+        0.5
+      ],
+      "min": [
+        -0.5,
+        -1.0,
+        -0.5
+      ]
+    },
+    {
+      "bufferView": 13,
+      "componentType": 5126,
+      "count": 550,
+      "type": "VEC3",
+      "max": [
+        0.99871253967285156,
+        1.0,
+        0.99871253967285156
+      ],
+      "min": [
+        -0.99871253967285156,
+        -0.99999916553497314,
+        -0.99871253967285156
+      ]
+    },
+    {
+      "bufferView": 14,
+      "componentType": 5126,
+      "count": 550,
+      "type": "VEC4",
+      "max": [
+        1.0,
+        0.0303095281124115,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -0.031331468373537064,
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "bufferView": 15,
+      "componentType": 5126,
+      "count": 550,
+      "type": "VEC2",
+      "max": [
+        0.99892324209213257,
+        1.0000053644180298
+      ],
+      "min": [
+        -0.0010808706283569336,
+        0.00115928053855896
+      ]
+    },
+    {
+      "bufferView": 16,
+      "componentType": 5126,
+      "count": 550,
+      "type": "VEC2",
+      "max": [
+        0.99924451112747192,
+        0.79135102033615112
+      ],
+      "min": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "bufferView": 17,
+      "componentType": 5125,
+      "count": 2496,
+      "type": "SCALAR",
+      "max": [
+        549.0
+      ],
+      "min": [
+        0.0
+      ]
+    }
+  ],
+  "asset": {
+    "generator": "Plattar UnityGLTF (2019.4.14f1)",
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "object.bin",
+      "byteLength": 122352
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 6600
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6600,
+      "byteLength": 6600
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 13200,
+      "byteLength": 8800
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 22000,
+      "byteLength": 4400
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 26400,
+      "byteLength": 4400
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 30800,
+      "byteLength": 9984
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 40784,
+      "byteLength": 6600
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 47384,
+      "byteLength": 6600
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 53984,
+      "byteLength": 8800
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 62784,
+      "byteLength": 4400
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 67184,
+      "byteLength": 4400
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 71584,
+      "byteLength": 9984
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 81568,
+      "byteLength": 6600
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 88168,
+      "byteLength": 6600
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 94768,
+      "byteLength": 8800
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 103568,
+      "byteLength": 4400
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 107968,
+      "byteLength": 4400
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 112368,
+      "byteLength": 9984
+    }
+  ],
+  "images": [
+    {
+      "uri": "Fruit Jelly (B&W).jpg",
+      "name": "Fruit Jelly (B&W)"
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.111205064,
+          0.2561107,
+          0.4811321,
+          1.0
+        ],
+        "baseColorTexture": {
+          "index": 0,
+          "extensions": {
+            "KHR_texture_transform": {
+              "scale": [
+                20.0,
+                20.0
+              ]
+            }
+          }
+        },
+        "metallicFactor": 0.125,
+        "roughnessFactor": 0.84399999678134918
+      },
+      "emissiveFactor": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "name": "Ground - Logo Scene"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4
+          },
+          "indices": 5,
+          "material": 0
+        }
+      ],
+      "name": "object"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 6,
+            "NORMAL": 7,
+            "TANGENT": 8,
+            "TEXCOORD_0": 9,
+            "TEXCOORD_1": 10
+          },
+          "indices": 11,
+          "material": 0
+        }
+      ],
+      "name": "NPC2 (1)"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 12,
+            "NORMAL": 13,
+            "TANGENT": 14,
+            "TEXCOORD_0": 15,
+            "TEXCOORD_1": 16
+          },
+          "indices": 17,
+          "material": 0
+        }
+      ],
+      "name": "NPC2 (2)"
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1,
+        2
+      ],
+      "mesh": 0,
+      "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "translation": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "name": "object"
+    },
+    {
+      "mesh": 1,
+      "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "scale": [
+        1.0,
+        0.76501,
+        1.0
+      ],
+      "translation": [
+        0.27,
+        0.0,
+        0.68
+      ],
+      "name": "NPC2 (1)"
+    },
+    {
+      "mesh": 2,
+      "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "translation": [
+        -0.44,
+        0.0,
+        0.46
+      ],
+      "name": "NPC2 (2)"
+    }
+  ],
+  "samplers": [
+    {
+      "minFilter": 9729
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ],
+      "name": "object"
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0,
+      "name": "Fruit Jelly (B&W)"
+    }
+  ]
+}
