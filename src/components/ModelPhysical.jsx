@@ -7,7 +7,7 @@ const Model = props => {
     const modelRef = useRef();
     useFrame(() => {
         if(modelRef.current != null){
-          modelRef.current.rotation.y += 0.003
+          // modelRef.current.rotation.y += 0.003
         }
       })
     const { path, ...props_ } = props;
