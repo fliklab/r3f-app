@@ -4,7 +4,6 @@ import { OrbitControls, Stats } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import "./App.css";
-import BoundingBoxPhysical from "./components/BoundingBoxPhysical";
 import CubePhysical from "./components/CubePhysical";
 import ModelPhysical from "./components/ModelPhysical";
 import Plane from "./components/Plane";
@@ -24,9 +23,7 @@ function App() {
             {(new Array(15)).fill(0).map(
               ji => { return <CubePhysical position={[random(-8, 8), random(1, 10), random(-8, 8)]} scale={[0.1, 0.1, 0.15]} rotation={[random(0.1, 25), 0, 0]} /> }
             )}
-            <BoundingBoxPhysical visible position={[-1, 2, 0]} dims={[0.8,4,0.8]} rotation={[0.3,0,0]}>
-              <ModelPhysical path="assets/Dwarf Idle/Dwarf Idle.gltf" scale={[2,2,2]} position={[0,-2,0]}/>
-            </BoundingBoxPhysical>
+              <ModelPhysical />
           </Suspense>
         </Physics>
         <Stats />

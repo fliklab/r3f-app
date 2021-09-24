@@ -2,6 +2,7 @@
 import { useFrame, useLoader } from '@react-three/fiber';
 import { useRef, useState } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import BoundingBoxPhysical from './BoundingBoxPhysical';
 
 const Model = props => {
   const [keyPressed, setKeyPressed] = useState({up:false, down:false, left:false, right:false})
@@ -47,20 +48,30 @@ const Model = props => {
   
     useFrame(() => {
       if (modelRef.current != null ) {
-        if(keyPressed.left && !keyPressed.right)
-          modelRef.current.position.x -= 0.01;
+        if (keyPressed.left && !keyPressed.right)
+          modelRef.current.position.set(modelRef.current.position.x - 0.06, modelRef.current.position.y, modelRef.current.position.z);
         else if(keyPressed.right)
-          modelRef.current.position.x += 0.01;
-        }
+          modelRef.current.position.set(modelRef.current.position.x + 0.06, modelRef.current.position.y, modelRef.current.position.z);
+      }
+        if(keyPressed.up && !keyPressed.down)
+          modelRef.current.position.z -= 0.06;
+        else if(keyPressed.down)
+          modelRef.current.position.z += 0.06;
     })
   
-    const { path, ...props_ } = props;
+    // const { path, ...props_ } = props;
     const model = useLoader(
             GLTFLoader,
-            path
+            "assets/Dwarf Idle/Dwarf Idle.gltf"
         )
     console.log(model);
-    return <primitive ref={modelRef} object={model.scene} {...props_} />;
+  return (
+    <group ref={modelRef}>
+       <BoundingBoxPhysical visible position={[-1, 2, 0]} dims={[0.8, 4, 0.8]} rotation={[0.3, 0, 0]}>
+        <primitive object={model.scene} path="assets/Dwarf Idle/Dwarf Idle.gltf" scale={[2,2,2]} position={[0,-2,0]} />;
+       </BoundingBoxPhysical>
+    </group>
+  )  
 }
 
 export default Model
