@@ -1,0 +1,11 @@
+Model Information:
+* title:	Psychic Cyborg
+* source:	https://sketchfab.com/3d-models/psychic-cyborg-7b62d5a5c30d4faa90150c7295c7b81a
+* author:	alen60303 (https://sketchfab.com/alen60303)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Psychic Cyborg" (https://sketchfab.com/3d-models/psychic-cyborg-7b62d5a5c30d4faa90150c7295c7b81a) by alen60303 (https://sketchfab.com/alen60303) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
