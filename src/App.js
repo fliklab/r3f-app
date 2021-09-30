@@ -5,7 +5,7 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import "./App.css";
 import CubePhysical from "./components/CubePhysical";
-import ModelPhysical from "./components/ModelPhysical";
+import ModelAnimated from './components/ModelAnimated';
 import Plane from "./components/Plane";
 import { random } from "./utils/getRandom";
 
@@ -23,7 +23,7 @@ function App() {
             {(new Array(15)).fill(0).map(
               ji => { return <CubePhysical position={[random(-8, 8), random(1, 10), random(-8, 8)]} scale={[0.1, 0.1, 0.15]} rotation={[random(0.1, 25), 0, 0]} /> }
             )}
-              <ModelPhysical />
+          <ModelAnimated path='assets/marie_survivor/scene.gltf'/>
           </Suspense>
         </Physics>
         <Stats />
