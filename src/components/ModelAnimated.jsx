@@ -1,92 +1,83 @@
+import { useFrame, useLoader } from "@react-three/fiber";
+import { useRef, useState } from "react";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import * as THREE from "three";
+import BoundingBoxPhysical from "./BoundingBoxPhysical";
+import { findAllByTestId } from "@testing-library/dom";
 
-import { useFrame, useLoader } from '@react-three/fiber';
-import { useRef, useState } from 'react';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import * as THREE from 'three'
-import BoundingBoxPhysical from './BoundingBoxPhysical';
-
-
-const Model = props => {
-  const [keyPressed, setKeyPressed] = useState({up:false, down:false, left:false, right:false})
+const Model = (props) => {
   const modelRef = useRef();
-document.addEventListener('keydown', function (event) {
-  console.log(`Key: ${event.key} with keycode ${event.keyCode} has been pressed`);
-  switch (event.key) {
-    case 'w':
-        setKeyPressed(keyPressed => {return {...keyPressed, up: true}});
-        break;
-    case 's':
-      setKeyPressed(keyPressed => { return { ...keyPressed, down: true } });
-      break;
-    case 'a':
-      setKeyPressed(keyPressed => { return { ...keyPressed, left: true } });
-      break;
-    case 'd':
-      setKeyPressed(keyPressed => { return { ...keyPressed, right: true } });
-      break;
-    default:
-      break;
+  // const xRef = useRef(0);
+  const [moving, setMoving] = useState();
+
+  const { path } = props;
+  const model = useLoader(GLTFLoader, path);
+
+
+  let mixer;
+  mixer = new THREE.AnimationMixer(model.scene);
+  const action_idle = mixer.clipAction(model.animations[0]);
+  const action_walk = mixer.clipAction(model.animations[15]);
+  const action_die = mixer.clipAction(model.animations[1]);
+  if (model.animations.length > 0) {
+    // action.time = 0;
+    mixer.stopAllAction();
+    // action.fadeIn(0.5)
+    // action.play();
+    // action.play();
   }
+  useFrame((scene, delta) => {
+    mixer.update(delta);
   });
-  document.addEventListener('keyup', function (event) {
-    console.log(`Key: ${event.key} with keycode ${event.keyCode} has been pressed up`);
+  // console.log(model);
+
+  document.addEventListener("keydown", function (event) {
+    setMoving(true);
     switch (event.key) {
-      case 'w':
-          setKeyPressed(keyPressed => {return {...keyPressed, up: false}});
-          break;
-      case 's':
-        setKeyPressed(keyPressed => { return { ...keyPressed, down: false } });
+      case "x":
+        action_die.time = 0;
+        mixer.stopAllAction();
+        action_die.fadeIn(0.5);
+        action_die.setLoop(THREE.LoopOnce);
+        action_die.clampWhenFinished = true;
+        action_die.play();
         break;
-      case 'a':
-        setKeyPressed(keyPressed => { return { ...keyPressed, left: false } });
+      case "w":
+        mixer.stopAllAction();
+        action_walk.play();
         break;
-      case 'd':
-        setKeyPressed(keyPressed => { return { ...keyPressed, right: false } });
+      case "a":
+        action_idle.fadeIn(0.5);
+        mixer.stopAllAction();
+        action_idle.play();
+        break;
+      case "d":
         break;
       default:
         break;
     }
-  });  
+  });
 
-  useFrame(() => {
-    if (modelRef.current != null ) {
-      if (keyPressed.left && !keyPressed.right)
-        modelRef.current.position.set(modelRef.current.position.x - 0.06, modelRef.current.position.y, modelRef.current.position.z);
-      else if(keyPressed.right)
-        modelRef.current.position.set(modelRef.current.position.x + 0.06, modelRef.current.position.y, modelRef.current.position.z);
-    }
-      if(keyPressed.up && !keyPressed.down)
-        modelRef.current.position.z -= 0.06;
-      else if(keyPressed.down)
-        modelRef.current.position.z += 0.06;
-  })
-
-    const { path } = props;
-    const model = useLoader(
-            GLTFLoader,
-            path
-    )
-  
-  let mixer;
-  if (model.animations.length > 0) {
-    mixer = new THREE.AnimationMixer(model.scene);
-    // model.animations.forEach((clip, index) => {
-    //   const action = mixer.clipAction(clip)
-    //   action.play();
-    //   console.log(`clip ${index}`, clip)
-    // })
-    const action = mixer.clipAction(model.animations[1]);
-    action.play();
-  }
-  useFrame((scene, delta) => {mixer.update(delta)})
-  console.log(model);
 
   return (
-    <group ref={modelRef}>
-       <BoundingBoxPhysical visible position={[-1, 2, 0]} dims={[0.8, 4, 0.8]} rotation={[0.3, 0, 0]} >
-        <primitive object={model.scene} path="assets/Dwarf Idle/Dwarf Idle.gltf" scale={[2,2,2]} position={[0,-2,0]} />;
-       </BoundingBoxPhysical>
+    <group resadf={modelRef}>
+      <BoundingBoxPhysical
+        visible
+        up={[0, 10, 0]}
+        position={[0, 0, 0]}
+        dims={[1, 0.8, 1]}
+        rotation={[0, 0, 0]}
+      >
+        <primitive
+          object={model.scene}
+          path="assets/Dwarf Idle/Dwarf Idle.gltf"
+          scale={[2, 2, 2]}
+          position={[0, 0, 0]}
+        />
+        ;
+      </BoundingBoxPhysical>
     </group>
-  )  }
+  );
+};
 
-export default Model
+export default Model;
