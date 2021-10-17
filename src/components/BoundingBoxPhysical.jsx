@@ -1,5 +1,7 @@
 import { useBox } from "@react-three/cannon";
 import { useFrame } from "@react-three/fiber";
+import { useRecoilValue } from "recoil";
+import { $player} from "../state";
 
 const BoundingBoxPhysical = ({
   position = [0, 0, 0],
@@ -10,14 +12,16 @@ const BoundingBoxPhysical = ({
 }) => {
   const usedBox = useBox(() => ({ mass: 1, args: dims, position }));
   const [ref, api] = usedBox;
+  const playerPosition = useRecoilValue($player);
 
-  useFrame(({ clock }) =>
+
+  useFrame(({ clock }) => {
     api.position.set(
-      Math.sin(clock.getElapsedTime()) * 5,
-      0,
-      Math.cos(clock.getElapsedTime()) * 5
-    )
-  );
+      playerPosition[0],playerPosition[1],playerPosition[2]
+    );
+  });
+  
+
 
   return (
     <group ref={ref} api={api}>
