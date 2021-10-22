@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<style>
+			@font-face {
+				font-family: 'OpenSans';
+				src: url("https://rtay.io/assets/font/OpenSans-Regular.ttf") format("truetype");
+				font-display: swap;
+			}
+
+			html, body {
+				width:  100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				background: black;
+			}
+
+			#block-input {
+				width:100vw;
+				height:100vh;
+				top:0;
+				left:0;
+				position:fixed;
+			}
+
+			#progress {
+				width: 200px;
+				height: 20px;
+				background: #333;
+				border: 2px solid #333;
+				opacity: 0.5;
+				position: fixed;
+				left: 50%;
+				top: 50%;
+				margin-left: -100px;
+				margin-top: -10px;
+			}
+			#progress-bar {
+				width: 200px;
+				width: 0%;
+				height: 20px;
+				background: white;
+				border: none;
+			}
+
+			#canvas-holder {
+				filter: blur(10px);
+			}
+		</style>
+	</head>
+	<body>
+		<!-- The page -->
+		<div id='canvas-holder'></div>
+		<div id="progress"><div id="progress-bar"></div></div>
+		<div id="block-input"></div>
+
+		<!-- JavaScript -->
+		<script src="/js/socket.io.js"></script>
+		<script src="/js/WebGL.min.js"></script>
+		<script src="/js/woahzone.js" type="module"></script>
+	</body>
+</html>
+
+
+
+

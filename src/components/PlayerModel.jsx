@@ -1,5 +1,5 @@
 import { useFrame, useLoader, useThree } from "@react-three/fiber";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useSetRecoilState } from "recoil";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
@@ -9,20 +9,18 @@ import BoundingBoxPhysical from "./BoundingBoxPhysical";
 
 const PlayerModel = (props) => {
   const modelRef = useRef();
-  // const xRef = useRef(0);
-  const [moving, setMoving] = useState();
-
-  const  { moveForward,
-  moveBackward,
-  moveLeft,
-  moveRight,} = useKeyboard()
+  const {
+      moveForward,
+    moveBackward,
+    moveLeft,
+    moveRight,} = useKeyboard()
 
   const { path } = props;
   const model = useLoader(GLTFLoader, path);
-  // const { camera } = useThree();
   const setPlayerPosition = useSetRecoilState($player);
+  // const playerState = useRecoilState($player);
 
-
+  const {camera} = useThree();
   let mixer;
   mixer = new THREE.AnimationMixer(model.scene);
   const action_idle = mixer.clipAction(model.animations[0]);
@@ -36,42 +34,38 @@ const PlayerModel = (props) => {
     // action.play();
   }
   useFrame((scene, delta) => {
-    // camera.position.copy(modelRef.current.position);
     mixer.update(delta);
   });
-  // console.log(model);
 
   useFrame(({ clock }) => {
     const direction = new THREE.Vector3();
-
     const frontVector = new THREE.Vector3(
       0,
       0,
-      - Number(moveBackward) + Number(moveForward)
+      Number(moveBackward) - Number(moveForward)
     );
     const sideVector = new THREE.Vector3(Number(moveLeft) - Number(moveRight), 0, 0);
-
     direction
       .subVectors(frontVector, sideVector)
       .normalize()
-      .multiplyScalar(0.3)
-      // .applyEuler(camera.rotation);
+      .multiplyScalar(0.07)
+      .applyEuler(camera.rotation);
     
-    if (moving) {
-      setPlayerPosition(cubes => [
-        cubes[0] + direction.x,
-        cubes[1],
-        cubes[2] + direction.z,
-      ]);
+      setPlayerPosition(pos => {
+        const camRotation = camera.rotation.toArray()
+        return {
+          position:[
+            pos.position[0] + direction.x,
+            1,
+            pos.position[2] + direction.z,
+            ],
+          rotation: [0, (camRotation[2]+Math.PI), 0]
+        }
+      });
     }
-  }
   );
 
-  document.addEventListener("keyup", function (event) {
-    setMoving(false);
-  });
   document.addEventListener("keydown", function (event) {
-    setMoving(true);
     switch (event.key) {
       case "x":
         action_die.time = 0;
@@ -102,16 +96,16 @@ const PlayerModel = (props) => {
     <group ref={modelRef} up={[0,1,0]}>
       <BoundingBoxPhysical
         visible
-        up={[0, 10, 0]}
-        position={[0, 0, 0]}
-        dims={[1, 0.8, 1]}
+        up={[0, 0, 0]}
+        position={[0, 2, 0]}
+        dims={[1.3, 2, 1.3]}
         rotation={[0, 0, 0]}
       >
         <primitive
           object={model.scene}
-          path="assets/Dwarf Idle/Dwarf Idle.gltf"
+          path={process.env.PUBLIC_URL + "/assets/Dwarf Idle/Dwarf Idle.gltf"}
           scale={[2, 2, 2]}
-          position={[0, 0, 0]}
+          position={[0, -1, 0]}
         />
       </BoundingBoxPhysical>
     </group>

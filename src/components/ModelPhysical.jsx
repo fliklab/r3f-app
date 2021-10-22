@@ -62,13 +62,13 @@ const Model = props => {
     //  const { path, ...props_ } = props;
     const model = useLoader(
             GLTFLoader,
-            "assets/Dwarf Idle/Dwarf Idle.gltf"
+            process.env.PUBLIC_URL + "/assets/Dwarf Idle/Dwarf Idle.gltf"
         )
     console.log(model);
   return (
     <group ref={modelRef}>
        <BoundingBoxPhysical visible position={[-1, 2, 0]} dims={[0.8, 4, 0.8]} rotation={[0.3, 0, 0]} >
-        <primitive object={model.scene} path="assets/Dwarf Idle/Dwarf Idle.gltf" scale={[2,2,2]} position={[0,-2,0]} />;
+        <primitive object={model.scene} scale={[2,2,2]} position={[0,-2,0]} />;
        </BoundingBoxPhysical>
     </group>
   )  
