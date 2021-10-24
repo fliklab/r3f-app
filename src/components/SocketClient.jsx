@@ -3,11 +3,7 @@ import React from "react";
 import io from "socket.io-client";
 import { useEffect, useState } from "react";
 
-const socket = io.connect(
-  "http://localhost:9000", {
-        transports: ["websocket"],
-  }
-);
+
     
 
 export default function SocketClient() {
@@ -17,19 +13,29 @@ export default function SocketClient() {
     setMessages((messages) => [...messages, data]);
   };
 
-  socket.on("connect", (msg) => {
-    socket.emit("message-client", `연결됨.`);
-    console.log("connected", msg);
-    socket.emit("name", "Tom");
-  });
-  socket.on("seq-num", (msg) => {
-    // setCounter(msg)
-    console.info(msg)
-  });
-  socket.on("message", (msg) => {
-    // addMessage(msg);
-    console.info(msg);
-  });
+  const socket = io.connect(
+    "http://localhost:9000", {
+          transports: ["websocket"],
+    }
+  );
+  
+  useEffect(() => {
+    socket.on("connect", (msg) => {
+      socket.emit("message-client", `연결됨.`);
+      console.log("connected", msg);
+      socket.emit("name", "Tom");
+    });
+    socket.on("seq-num", (msg) => {
+      // setCounter(msg)
+      console.info(msg)
+    });
+    socket.on("message", (msg) => {
+      // addMessage(msg);
+      console.info(msg);
+    });
+    return socket.emit('end');
+  }, [])
+  
   
   useEffect(() => {
     // socket.emit("msg", `count ${counter}`);
