@@ -186,3 +186,4 @@ fabric.properties
 
 # Rest of .idea folder
 .idea
+.DS_Store
