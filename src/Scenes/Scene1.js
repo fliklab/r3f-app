@@ -21,9 +21,10 @@ function Scene() {
   })
 
   return <>
-    <ambientLight intensity={0.2} />
-<pointLight position={[70, 100, 0]} color="blue" intensity={20} />
-  <pointLight position={[-70, 80, -20]} color="pink" intensity={20} />
+  <ambientLight intensity={0.5} />
+  <pointLight position={[50, 50, 0]} color="blue" intensity={1} />
+  <pointLight position={[-60, 80, -20]} color="pink" intensity={1} />
+  {/* <spotLight color="#ffeeff" position={[2,4,1]} angle={0.6} />  */}
   {/* todo: use camera of recoil and update its target position, use lookat ? or worldDrirection ? and compute its direction */}
     <OrbitControls ref={orbitRef}/>
     <Suspense fallback={null}>
@@ -46,7 +47,7 @@ function Scene() {
 function Scene1() {
   return (
     <>
-      <Canvas camera={{ position: [7, 7, 7] }}>
+      <Canvas camera={{ position: [7, 7, 5] }}>
         <RecoilRoot>
           <Physics>
             <Scene/>
