@@ -8,6 +8,7 @@ import { Vector3 } from "three";
 import "./Scene1.css";
 import CubePhysical from "../components/CubePhysical";
 import Plane from "../components/Plane/Plane";
+import ModelAnimated from "../components/PlayerModel";
 import { random } from "../utils/getRandom";
 
 function Scene() {
