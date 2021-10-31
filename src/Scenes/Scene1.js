@@ -8,6 +8,8 @@ import { Vector3 } from "three";
 import "./Scene1.css";
 import CubePhysical from "../components/CubePhysical";
 import Plane from "../components/Plane/Plane";
+import PlayerModel from "../components/PlayerModel/PlayerModel";
+import { Scene as SkyBoxcene } from "../components/SkyBox/SkyBox";
 import { random } from "../utils/getRandom";
 
 function Scene() {
@@ -24,10 +26,10 @@ function Scene() {
 <pointLight position={[70, 100, 0]} color="blue" intensity={20} />
   <pointLight position={[-70, 80, -20]} color="pink" intensity={20} />
   {/* todo: use camera of recoil and update its target position, use lookat ? or worldDrirection ? and compute its direction */}
-    <OrbitControls ref={orbitRef}/>
+    <SkyBoxcene/>
     <Suspense fallback={null}>
       <Plane />
-      {new Array(45).fill(0).map((ji) => {
+      {new Array(15).fill(0).map((ji) => {
         return (
           <CubePhysical
             position={[random(-4, 4), random(1, 10), random(-4, 4)]}
@@ -36,7 +38,7 @@ function Scene() {
           />
         );
       })}
-      <ModelAnimated path={process.env.PUBLIC_URL + "assets/marie_survivor/scene.gltf"} />
+      <PlayerModel path={process.env.PUBLIC_URL + "assets/marie_survivor/scene.gltf"} />
     </Suspense>
 </>
 }
