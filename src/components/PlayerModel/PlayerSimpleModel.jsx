@@ -1,53 +1,50 @@
 import { useFrame, useLoader, useThree } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { useSetRecoilState } from "recoil";
-import { AnimationMixer, LoopRepeat, Vector3 } from "three";
+import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { useKeyboard } from "../../hooks/useKeyboard";
 import { $player } from "../../state";
-import BoundingBox from "./BoundingBox";
 
-const PlayerModel = (props) => {
-  const [animState, setAnimState] = useState(0);
+const PlayerSimpleModel = (props) => {
 
   const modelRef = useRef();
   const {
-    moveForward,
+      moveForward,
     moveBackward,
     moveLeft,
     moveRight,} = useKeyboard()
 
   const { path } = props;
   const model = useLoader(GLTFLoader, path);
-
   const setPlayerPosition = useSetRecoilState($player);
+  // const playerState = useRecoilState($player);
 
-  const { camera } = useThree();
-  
+  const {camera} = useThree();
   let mixer;
-  mixer = new AnimationMixer(model.scene);
-  const action_idle = mixer.clipAction(model.animations[props.idleIndex ?? 0]);
-  const action_walk = mixer.clipAction(model.animations[props.walkIndex ?? 1]);
+  mixer = new THREE.AnimationMixer(model.scene);
+  const action = mixer.clipAction(model.animations[0]);
   if (model.animations.length > 0) {
+    // action.time = 0;
     mixer.stopAllAction();
+    // action.fadeIn(0.5)
+   action.play();
+    // action.play();
   }
+  // const { messages, sendMessage } = useChat();
 
   useFrame((scene, delta) => {
-    if (moveForward | moveBackward | moveLeft | moveRight) {
-      setAnimState(1) // 1 : walk
-    }
-    else setAnimState(0) // 0: idle
     mixer.update(delta);
   });
 
   useFrame(({ clock }) => {
-    const direction = new Vector3();
-    const frontVector = new Vector3(
+    const direction = new THREE.Vector3();
+    const frontVector = new THREE.Vector3(
       0,
       0,
       Number(moveBackward) - Number(moveForward)
     );
-    const sideVector = new Vector3(Number(moveLeft) - Number(moveRight), 0, 0);
+    const sideVector = new THREE.Vector3(Number(moveLeft) - Number(moveRight), 0, 0);
     direction
       .subVectors(frontVector, sideVector)
       .normalize()
@@ -69,38 +66,19 @@ const PlayerModel = (props) => {
     }
   );
 
-  useEffect(() => {
-    mixer.stopAllAction();
-    switch (animState) {
-      case 1:
-        action_walk.setLoop(LoopRepeat);    
-        action_walk.play();
-        break;
-      default:
-        action_idle.setLoop(LoopRepeat);
-        action_idle.play();
-      break;
-    }
-}, [animState,action_walk,action_idle, mixer])
 
   return (
     <group ref={modelRef} up={[0, 1, 0]}>
-      <BoundingBox
-        visible
-        up={[0, 0, 0]}
-        position={[0, 2.4, 0]}
-        dims={[1.5, 2, 1.5]}
-        rotation={[0, 0, 0]}
-      >
         <primitive
           object={model.scene}
           path={props.path}
+          up={[0, 0, 0]}
+          rotation={[-Math.PI/2, 0, 0]}
           scale={[2, 2, 2]}
-          position={[0, -1, 0]}
+          position={[0, 1.4, 0]}
         />
-      </BoundingBox>
     </group>
   );
 };
 
-export default PlayerModel;
+export default PlayerSimpleModel;

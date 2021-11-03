@@ -39,7 +39,8 @@ function Scene() {
           />
         );
       })}
-      <PlayerModel path={process.env.PUBLIC_URL + "assets/marie_survivor/scene.gltf"} />
+      <PlayerModel path={process.env.PUBLIC_URL + "assets/marie_survivor/scene.gltf"} walkIndex={15} idleIndex={0}/>
+      {/* <PlayerSimpleModel path={process.env.PUBLIC_URL + "assets/marie_survivor/scene.gltf"} /> */}
     </Suspense>
 </>
 }
