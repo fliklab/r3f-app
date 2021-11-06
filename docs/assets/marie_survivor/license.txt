@@ -1,0 +1,11 @@
+Model Information:
+* title:	Marie Survivor
+* source:	https://sketchfab.com/3d-models/marie-survivor-05e8bdf53c3f411ba2517430a22368c9
+* author:	RG3D (https://sketchfab.com/Reifus.Rufus)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Marie Survivor" (https://sketchfab.com/3d-models/marie-survivor-05e8bdf53c3f411ba2517430a22368c9) by RG3D (https://sketchfab.com/Reifus.Rufus) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

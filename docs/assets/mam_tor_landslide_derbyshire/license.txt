@@ -1,0 +1,11 @@
+Model Information:
+* title:	Mam Tor landslide, Derbyshire
+* source:	https://sketchfab.com/3d-models/mam-tor-landslide-derbyshire-d2dc3c69f0464d8196cc289bacebc6e8
+* author:	Simon M Hutchinson (https://sketchfab.com/simonmhutch)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Mam Tor landslide, Derbyshire" (https://sketchfab.com/3d-models/mam-tor-landslide-derbyshire-d2dc3c69f0464d8196cc289bacebc6e8) by Simon M Hutchinson (https://sketchfab.com/simonmhutch) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
