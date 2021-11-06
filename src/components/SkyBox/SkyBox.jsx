@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useRef } from "react";
+import React, { Suspense, useEffect } from "react";
 import { useThree , Canvas} from "@react-three/fiber";
 import * as THREE from "three";
 // import { DoubleSide } from "three";
@@ -86,7 +86,7 @@ export function Scene() {
 
 export function SkyBoxApp() {
   return (
-    <Canvas style={{ background: "black" }} camera={{ position: [0, 0, 25] }}>
+    <Canvas style={{ background: "black" }}>
       <Suspense fallback={null}>
         <Scene />
         {/* <Effects /> */}

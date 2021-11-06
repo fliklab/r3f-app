@@ -1,9 +1,9 @@
-import SocketClient from "../components/SocketClient";
+// import SocketClient from "../components/SocketClient";
 
 function Scene2() { 
   return (
     <>
-    <SocketClient/>
+    {/* <SocketClient/> */}
     </>
   );
 }
