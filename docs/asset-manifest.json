@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/fliklab/staticcss/main.43aa44f8.chunk.css",
+    "main.js": "/r3f-app/static/js/main.1f787c20.chunk.js",
+    "main.js.map": "/r3f-app/static/js/main.1f787c20.chunk.js.map",
+    "runtime-main.js": "/r3f-app/static/js/runtime-main.d303cd73.js",
+    "runtime-main.js.map": "/r3f-app/static/js/runtime-main.d303cd73.js.map",
+    "r3f-app/static/js/2.021e02f7.chunk.js": "/r3f-app/static/js/2.021e02f7.chunk.js",
+    "r3f-app/static/js/2.021e02f7.chunk.js.map": "/r3f-app/static/js/2.021e02f7.chunk.js.map",
+    "r3f-app/static/js/3.af0228fb.chunk.js": "/r3f-app/static/js/3.af0228fb.chunk.js",
+    "r3f-app/static/js/3.af0228fb.chunk.js.map": "/r3f-app/static/js/3.af0228fb.chunk.js.map",
+    "index.html": "/index.html",
+    "r3f-app/static/css/main.43aa44f8.chunk.css.map": "/r3f-app/static/css/main.43aa44f8.chunk.css.map",
+    "r3f-app/static/js/2.021e02f7.chunk.js.LICENSE.txt": "/r3f-app/static/js/2.021e02f7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "r3f-app/static/js/runtime-main.d303cd73.js",
+    "r3f-app/static/js/2.021e02f7.chunk.js",
+    "r3f-app/static/css/main.43aa44f8.chunk.css",
+    "r3f-app/static/js/main.1f787c20.chunk.js"
+  ]
+}

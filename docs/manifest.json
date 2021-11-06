@@ -1,0 +1,9 @@
+{
+  "short_name": "r3f-template",
+  "name": "react three fiber starter project",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
