@@ -7,8 +7,8 @@ import { RecoilRoot } from "recoil";
 import CubePhysical from "../components/CubePhysical";
 import Plane from "../components/Plane/Plane";
 import PlayerModel from "../components/PlayerModel/PlayerModel";
-import SP from "../components/ShaderPlane/ShaderPlane";
 import { Scene as SkyBoxcene } from "../components/SkyBox/SkyBox";
+import { PUBLIC_ENV_URL } from "../config";
 import { random } from "../utils/getRandom";
 import "./Scene1.css";
 
@@ -47,7 +47,6 @@ function MainScene() {
       {/* <OrbitControls ref={orbitRef} minDistance={1} maxDistance={20} target={[0,2.5,0]}/> */}
       {/* <PointerLockControls ref={orbitRef} minDistance={1} maxDistance={20} target={[0,2.5,0]}/> */}
       <SkyBoxcene />
-      <SP />
       <Suspense fallback={null}>
         <Plane />
         {new Array(15).fill(0).map((ji) => {

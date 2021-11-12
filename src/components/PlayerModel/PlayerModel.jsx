@@ -1,3 +1,4 @@
+import { OrbitControls } from "@react-three/drei";
 import { useFrame, useLoader, useThree } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import { useSetRecoilState } from "recoil";
@@ -85,6 +86,7 @@ const PlayerModel = (props) => {
 
   return (
     <group ref={modelRef} up={[0, 1, 0]}>
+      <OrbitControls />
       <BoundingBox
         visible
         up={[0, 0, 0]}

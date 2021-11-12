@@ -2,6 +2,7 @@ import { useFrame, useLoader } from "@react-three/fiber";
 import { useRef } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { PUBLIC_ENV_URL } from "../../config";
 
 const PlainAnimModel = (props) => {
 
@@ -37,7 +38,7 @@ const PlainAnimModel = (props) => {
         <mesh rotation={[Math.PI / 2,0, 0]} >
         <primitive
           object={model.scene}
-          path={process.env.PUBLIC_URL + "/assets/Dwarf Idle/Dwarf Idle.gltf"}
+          path={PUBLIC_ENV_URL + "/assets/Dwarf Idle/Dwarf Idle.gltf"}
           scale={[0.03,0.03,0.03]}
           position={[8, -3.8, -10]}
         />

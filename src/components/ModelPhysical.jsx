@@ -2,6 +2,7 @@
 import { useLoader } from '@react-three/fiber';
 import { useRef } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { PUBLIC_ENV_URL } from '../config';
 import BoundingBoxPhysical from './BoundingBoxPhysical';
 
 const Model = props => {
@@ -9,7 +10,7 @@ const Model = props => {
 
     const model = useLoader(
             GLTFLoader,
-            process.env.PUBLIC_URL + props.path
+            PUBLIC_ENV_URL + props.path
         )
    
   return (
