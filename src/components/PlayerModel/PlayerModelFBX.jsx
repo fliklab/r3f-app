@@ -2,7 +2,7 @@ import { OrbitControls } from "@react-three/drei";
 import { useFrame, useLoader, useThree } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import { useSetRecoilState } from "recoil";
-import { AnimationMixer, LoopRepeat, Vector3 } from "three";
+import { AnimationMixer, LoopRepeat, Vector3,MeshBasicMaterial } from "three";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 import { useKeyboard } from "../../hooks/useKeyboard";
 import { $player } from "../../state";
@@ -95,10 +95,13 @@ const PlayerModel = (props) => {
     }
   }, [animState, action_walk, action_idle, mixer]);
 
+  const textMat = new MeshBasicMaterial({color: 0xffffff})
+  fbxObject.children[1].material[0].color = textMat.color
+
   return (
     <group ref={modelRef} up={[0, 1, 0]}>
       <OrbitControls ref={orbitRef} />
-      <BoundingBox visible up={[0, 0, 0]} dims={[1.5, 2, 1.5]}>
+      <BoundingBox visible up={[0, 0, 0]} dims={[1.5, 2, 1.5]} >
         <primitive
           object={fbxObject}
           path={props.path}

@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { useBox } from "@react-three/cannon";
 import { useFrame } from "@react-three/fiber";
 import { useRecoilValue } from "recoil";
@@ -28,9 +29,14 @@ const BoundingBoxPhysical = ({
         <boxBufferGeometry />
         <meshPhysicalMaterial wireframe />
       </mesh>
+      <Suspense fallabck={(<mesh scale={dims} visible={visible}>
+        <boxBufferGeometry />
+        <meshPhysicalMaterial wireframe />
+      </mesh>)} >
       <group position={offset}>
         {children}
       </group>
+      </Suspense>
     </group>
   );
 };
