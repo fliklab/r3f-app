@@ -27,8 +27,14 @@ import * as THREE from "three";
 
 // const images = ["nx1.jpg", "px2.png","ny1.jpg","py2.jpg","pz2.png","nz1.png" ,];
 
-const path = "/assets/skyboxes/city/";
-const images = ["px.png","nx.png", "py.png","ny.png","nz.png","pz.png"];
+const path = "/assets/skyboxes/toon/";
+const images = [
+  "LF.jpg",
+  "RT.jpg",
+  "UP.jpg",
+  "DN.jpg",
+  "FR.jpg",
+  "BK.jpg"];
 
 // const ext = ".png";
 
