@@ -101,7 +101,7 @@ const PlayerModel = (props) => {
   return (
     <group ref={modelRef} up={[0, 1, 0]}>
       <OrbitControls ref={orbitRef} />
-      <BoundingBox visible up={[0, 0, 0]} dims={[1.5, 2, 1.5]} >
+      <BoundingBox up={[0, 0, 0]} dims={[1.5, 2, 1.5]} >
         <primitive
           object={fbxObject}
           path={props.path}
