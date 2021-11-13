@@ -25,11 +25,11 @@ const BoundingBoxPhysical = ({
 
   return (
     <group ref={ref} api={api}>
-      <mesh scale={dims} visible={visible}>
+      {/* <mesh scale={dims} visible={visible}>
         <boxBufferGeometry />
         <meshPhysicalMaterial wireframe />
-      </mesh>
-      <Suspense fallabck={(<mesh scale={dims} visible={visible}>
+      </mesh> */}
+      <Suspense fallabck={(<mesh scale={dims}>
         <boxBufferGeometry />
         <meshPhysicalMaterial wireframe />
       </mesh>)} >
