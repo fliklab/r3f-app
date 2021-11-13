@@ -13,7 +13,6 @@ const BoundingBoxPhysical = ({
   const [ref, api] = useBox(() => ({ mass: 1, args: dims, position }));
   const {position:pPosition, rotation} = useRecoilValue($player);
 
-
   useFrame(({ clock }) => {
     api.position.set(
       pPosition[0],pPosition[1],pPosition[2]
@@ -22,8 +21,6 @@ const BoundingBoxPhysical = ({
       rotation[0], rotation[1], rotation[2]
     );
   });
-  
-
 
   return (
     <group ref={ref} api={api}>
@@ -31,7 +28,9 @@ const BoundingBoxPhysical = ({
         <boxBufferGeometry />
         <meshPhysicalMaterial wireframe />
       </mesh>
-      <group position={offset}>{children}</group>
+      <group position={offset}>
+        {children}
+      </group>
     </group>
   );
 };

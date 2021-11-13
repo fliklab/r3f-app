@@ -6,7 +6,7 @@ import { Suspense } from "react";
 import { RecoilRoot } from "recoil";
 import CubePhysical from "../components/CubePhysical";
 import Plane from "../components/Plane/Plane";
-import PlayerModel from "../components/PlayerModel/PlayerModel";
+import PlayerModel from "../components/PlayerModel/PlayerModelFBX";
 import { Scene as SkyBoxcene } from "../components/SkyBox/SkyBox";
 import { PUBLIC_ENV_URL } from "../config";
 import { random } from "../utils/getRandom";
@@ -59,11 +59,9 @@ function MainScene() {
           );
         })}
         <PlayerModel
-          path={process.env.PUBLIC_URL + "assets/marie_survivor/scene.gltf"}
-          walkIndex={15}
-          idleIndex={0}
+          fbxPath={PUBLIC_ENV_URL + "assets/Walking/Walking.fbx"}
+          idlePath={PUBLIC_ENV_URL + "assets/Walking/Idle.fbx"}
         />
-        {/* <PlayerSimpleModel path={process.env.PUBLIC_URL + "assets/marie_survivor/scene.gltf"} /> */}
       </Suspense>
     </>
   );
